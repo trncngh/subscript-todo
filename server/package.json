@@ -3,12 +3,11 @@
 	"version": "1.0.0",
 	"scripts": {
 		"heroku-postbuild": "cd server && npx knex migrate:latest",
-		"client": "cd client && yarn start",
-		"server": "cd server && nodemon server.js",
+		"server": "nodemon server.js",
 		"dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-		"test": "cd server && jest",
-		"test:watch": "cd server && jest --watch",
-		"start": "cd server && node server.js"
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"start": "nodemon --watch ./ server.js"
 	},
 	"dependencies": {
 		"body-parser": "^1.19.0",
